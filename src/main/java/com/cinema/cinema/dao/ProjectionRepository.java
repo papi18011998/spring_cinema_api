@@ -1,7 +1,8 @@
 package com.cinema.cinema.dao;
 
 import com.cinema.cinema.entities.Cinema;
+import com.cinema.cinema.entities.Projection;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProjectionRepository extends JpaRepository<Cinema,Long> {
+public interface ProjectionRepository extends JpaRepository<Projection,Long> {
 }
