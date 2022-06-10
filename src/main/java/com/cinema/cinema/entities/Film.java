@@ -1,5 +1,7 @@
 package com.cinema.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,7 @@ public class Film {
     private double duree;
     private Date dateSortie;
     @OneToMany(mappedBy = "film")
+    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Projection> projections;
     @ManyToOne()
     private Categorie categorie;

@@ -25,4 +25,5 @@ public class Projection {
     private Collection<Ticket> tickets;
     @ManyToOne
     private Seance seance;
+
 }

@@ -47,11 +47,13 @@ public class CinemaInitService implements ICinemaInitService{
     @Override
     public void initSalles() {
         cinemaRepository.findAll().forEach(cinema -> {
-            Salle salle = new Salle();
-            salle.setNombrePlaces(20+(int) (Math.random()*30));
-            salle.setCinema(cinema);
-            salle.setNom("Salle "+cinema.getNom());
-            salleRepository.save(salle);
+            for (int i=1; i<cinema.getNombreSalles();i++){
+                Salle salle = new Salle();
+                salle.setNombrePlaces(20+(int) (Math.random()*30));
+                salle.setCinema(cinema);
+                salle.setNom("Salle "+cinema.getNom());
+                salleRepository.save(salle);
+            }
         });
     }
     @Autowired
